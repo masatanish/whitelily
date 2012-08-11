@@ -6,6 +6,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.text :description
       t.float :latitude
       t.float :longitude
+      t.boolean :gmaps
 
       t.timestamps
     end
