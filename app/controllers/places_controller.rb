@@ -4,7 +4,14 @@ class PlacesController < ApplicationController
   def index
     @places = Place.all
 
-    @json = Place.all.to_gmaps4rails
+    @json = Place.all.to_gmaps4rails do |place, marker|
+      marker.infowindow render_to_string(:partial => 'infobox', :locals => { :object => place})
+      marker.title place.name
+      marker.sidebar place.name
+    end
+    Rails.logger.info '-'*30
+    Rails.logger.info @json.to_s
+    Rails.logger.info '-'*30
 
     respond_to do |format|
       format.html # index.html.erb
