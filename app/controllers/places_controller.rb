@@ -5,8 +5,7 @@ class PlacesController < ApplicationController
     @places = Place.all
 
     @json = Place.all.to_gmaps4rails
-    Rails.logger.info '-' * 30
-    Rails.logger.info @json
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @places }
@@ -17,6 +16,7 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     @place = Place.find(params[:id])
+    @json = Place.find(params[:id]).to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb
