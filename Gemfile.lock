@@ -62,6 +62,9 @@ GEM
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
+    jquery-ui-rails (1.1.0)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.7.4)
     less (2.2.1)
       commonjs (~> 0.2.6)
@@ -206,6 +209,7 @@ DEPENDENCIES
   haml (>= 3.0.0)
   haml-rails
   jquery-rails
+  jquery-ui-rails
   omniauth (~> 0.2.0)
   pg
   rails (= 3.2.8)

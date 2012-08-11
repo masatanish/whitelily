@@ -6,7 +6,7 @@
   .span7
     %table.table
       %tr
-        %th.th-title お店:
+        %th.th-title 店名:
         %td= @place.name
       %tr
         %th 住所:
@@ -18,7 +18,7 @@
         %th 登録日:
         %td= @place.created_at
   .span4
-    = gmaps(:map_options => { :container_class => 'small_container', :class => 'small_map', 'auto_adjust' => 'true' },
+    = gmaps(:map_options => { :zoom => 14, :auto_zoom => false, :container_class => 'small_container', :class => 'small_map', 'auto_adjust' => 'true' },
       :markers => { 'data' => @json })
 
 .row-fluid

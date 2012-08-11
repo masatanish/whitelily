@@ -27,6 +27,7 @@ group :development, :test do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "omniauth", "~> 0.2.0"
