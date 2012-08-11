@@ -30,7 +30,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "haml", ">= 3.0.0"
 gem "haml-rails"
-gem "omniauth", "~> 0.2.0"
+gem "omniauth"
+gem "omniauth-twitter"
 gem 'twitter-bootstrap-rails'
 gem 'gmaps4rails'
 
