@@ -31,3 +31,5 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 gem "omniauth", "~> 0.2.0"
 gem 'twitter-bootstrap-rails'
+gem 'gmaps4rails'
+
