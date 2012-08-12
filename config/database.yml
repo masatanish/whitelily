@@ -44,8 +44,10 @@ test:
 
 production:
   adapter: postgresql
-  encoding: unicode
-  database: whitelily_production
+  encoding: utf8
   pool: 5
-  username: whitelily
-  password:
+  host: c2-107-22-169-60.compute-1.amazonaws.com
+  port: 5432
+  username: bueknsizlwdrre
+  password: eOb8zy7YPGr1jrRkXQbEr3FXKJ
+  database: d11uk9jeevag2k
