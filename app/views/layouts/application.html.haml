@@ -46,7 +46,7 @@
 
     .container-fluid
 
-      -#.row-fluid
+      .row-fluid
         -unless flash.notice.blank?
           .alert.alert-info
             %button.class{'data-dismiss' => 'alert', :type => 'button' } x
@@ -54,7 +54,7 @@
         -unless flash.alert.blank?
           .alert.alert-error
             %button.class{'data-dismiss' => 'alert', :type => 'button' } x
-            = flash.notice
+            = flash.alert
       .row-fluid
         -#.span3
           .well.sidebar-nav

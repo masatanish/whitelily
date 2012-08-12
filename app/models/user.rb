@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :provider, :screen_name, :uid
+  attr_accessible :name, :provider, :screen_name, :uid, :role
+  role = %w(admin member)
+  def admin?
+    role == 'admin'
+  end
 
   def self.create_with_omniauth(auth)
     create! do |user|
