@@ -4,6 +4,7 @@ Whitelily::Application.routes.draw do
   root :to => 'home#index'
 
   match '/auth/:provider/callback', :to => 'sessions#callback'
+  match '/logout', :to => 'sessions#destroy', :as => :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -32,9 +32,29 @@
               %li= link_to "Link 1", "/path1"
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
+            %ul.nav.pull-right
+              - if current_user
+                %li.dropdown
+                  %a.dropdown-toggle{ 'data-toggle' => 'dropdown' }
+                    - unless current_user.screen_name.nil?
+                      = image_tag(twitter_icon_url, :size => '20x20')
+                    = current_user.name
+                  %ul.dropdown-menu
+                    %li= link_to 'Logout', logout_path
+              - else
+                %li= link_to "Login", "/auth/#{DEFAULT_PROVIDER}"
 
     .container-fluid
 
+      -#.row-fluid
+        -unless flash.notice.blank?
+          .alert.alert-info
+            %button.class{'data-dismiss' => 'alert', :type => 'button' } x
+            = flash.notice
+        -unless flash.alert.blank?
+          .alert.alert-error
+            %button.class{'data-dismiss' => 'alert', :type => 'button' } x
+            = flash.notice
       .row-fluid
         -#.span3
           .well.sidebar-nav
