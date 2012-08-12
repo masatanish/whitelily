@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :provider, :screen_name, :uid, :role
+  has_many :places
+
   role = %w(admin member)
   def admin?
     role == 'admin'

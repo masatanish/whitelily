@@ -11,17 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120812062704) do
+ActiveRecord::Schema.define(:version => 20120812085931) do
 
   create_table "places", :force => true do |t|
-    t.string   "name",        :null => false
-    t.string   "address",     :null => false
+    t.string   "name",           :null => false
+    t.string   "address",        :null => false
     t.text     "description"
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "user_id"
+    t.integer  "last_editor_id"
   end
 
   create_table "users", :force => true do |t|
@@ -29,9 +31,11 @@ ActiveRecord::Schema.define(:version => 20120812062704) do
     t.string   "uid"
     t.string   "screen_name"
     t.string   "name"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.string   "role",        :default => "member"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.string   "role",           :default => "member"
+    t.integer  "user_id"
+    t.integer  "last_editor_id"
   end
 
 end

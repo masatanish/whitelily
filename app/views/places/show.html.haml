@@ -17,6 +17,25 @@
       %tr
         %th 登録日:
         %td= @place.created_at
+    -unless @place.user.nil?
+      #posted-by{ :align => 'right' }
+        %p
+          %small
+            Posted by 
+            = @place.user.screen_name
+            - unless twitter_icon_url(@place.user).nil?
+              = image_tag(twitter_icon_url(@place.user), :size => '20x20')
+          %br
+          %small= "(#{time_ago_in_words(@place.created_at)} ago)"
+        - unless @place.created_at == @place.updated_at
+          %p
+            %small
+              Last Modified by 
+              = @place.last_editor.screen_name
+              - unless twitter_icon_url(@place.last_editor).nil?
+                = image_tag(twitter_icon_url(@place.last_editor), :size => '20x20')
+            %br
+            %small= "(#{time_ago_in_words(@place.updated_at)} ago)"
   .span4
     = gmaps(:map_options => { :zoom => 14, :auto_zoom => false, :container_class => 'small_container', :class => 'small_map', 'auto_adjust' => 'true' },
       :markers => { 'data' => @json })
