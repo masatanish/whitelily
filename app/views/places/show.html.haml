@@ -14,9 +14,6 @@
       %tr
         %th 説明:
         %td= @place.description
-      %tr
-        %th 登録日:
-        %td= @place.created_at
     -unless @place.user.nil?
       #posted-by{ :align => 'right' }
         %p
