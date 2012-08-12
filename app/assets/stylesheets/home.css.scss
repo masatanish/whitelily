@@ -1,3 +1,25 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* ---------- gallery styles start here ----------------------- */
+.photo {
+  margin: 30px;
+  position: relative;
+  width: 330px;
+  height: 250px;
+  float: left;
+}
+.photo img {
+  background: #fff;
+  border: solid 1px #ccc;
+  padding: 4px;
+}
+.photo span {
+  width: 115px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  top: -13px;
+  left: 100px;
+  background: url(/assets/tape2.png) no-repeat;
+}

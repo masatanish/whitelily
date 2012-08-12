@@ -1,2 +1,11 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.hero-unit
+  .row-fluid
+    .span6 
+      %h1 白百合MAP
+      %p by 白百合会
+      %p= link_to '地図へ', places_path
+    .span5
+      .photo
+        %span
+        =image_tag('top.jpg', :size => '320x240')
+
