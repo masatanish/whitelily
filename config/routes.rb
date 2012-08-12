@@ -2,6 +2,7 @@ Whitelily::Application.routes.draw do
   resources :places
 
   root :to => 'home#index'
+  match '/about', :to => 'home#about', :as => :about
 
   match '/auth/:provider/callback', :to => 'sessions#callback'
   match '/logout', :to => 'sessions#destroy', :as => :logout

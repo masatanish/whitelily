@@ -5,8 +5,6 @@
 .photo {
   margin: 30px;
   position: relative;
-  width: 330px;
-  height: 250px;
   float: left;
 }
 .photo img {
@@ -21,5 +19,14 @@
   position: absolute;
   top: -13px;
   left: 100px;
+  background: url(/assets/tape2.png) no-repeat;
+}
+.photo-portrait span {
+  width: 115px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  top: -13px;
+  left: 50px;
   background: url(/assets/tape2.png) no-repeat;
 }
