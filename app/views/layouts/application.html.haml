@@ -48,7 +48,7 @@
       .row-fluid
         -unless flash.notice.blank?
           .alert.alert-info
-            %button.class{'data-dismiss' => 'alert', :type => 'button' } x
+            %button.close{'data-dismiss' => 'alert', :type => 'button' } x
             = flash.notice
         -unless flash.alert.blank?
           .alert.alert-error
