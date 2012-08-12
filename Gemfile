@@ -34,4 +34,5 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem 'twitter-bootstrap-rails'
 gem 'gmaps4rails'
+gem 'cancan'
 
