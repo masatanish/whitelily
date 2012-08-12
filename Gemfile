@@ -23,10 +23,10 @@ end
 group :development, :test do
   gem "rspec-rails", ">= 2.0.1"
   gem 'sqlite3'
-  gem 'thin'
   gem 'heroku'
 end
 
+gem 'thin'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem "haml", ">= 3.0.0"
