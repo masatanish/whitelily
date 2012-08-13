@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, :alert => exception.message
+    redirect_to main_app.root_path, :alert => exception.message
   end
 
   helper_method :current_user
