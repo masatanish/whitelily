@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120812085931) do
+ActiveRecord::Schema.define(:version => 20120813091843) do
 
   create_table "places", :force => true do |t|
     t.string   "name",           :null => false
@@ -26,16 +26,27 @@ ActiveRecord::Schema.define(:version => 20120812085931) do
     t.integer  "last_editor_id"
   end
 
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
   create_table "users", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "screen_name"
     t.string   "name"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
-    t.string   "role",           :default => "member"
-    t.integer  "user_id"
-    t.integer  "last_editor_id"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.string   "role",        :default => "member"
   end
 
 end
