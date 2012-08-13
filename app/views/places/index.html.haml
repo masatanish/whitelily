@@ -11,9 +11,8 @@
       %tr
         %th 店名
         %th 住所
-        %th 登録日
-        %th 投稿者
         %th 
+        %th 登録日
         - if can? :write, Place
           %th 編集
     %tbody
@@ -21,14 +20,10 @@
         %tr
           %td= link_to place.name, place_path(place)
           %td= place.address
-          %td= d(place.created_at)
-
-          %td
-            -unless place.user.nil?
-              = place.user.screen_name 
           %td
             - unless place.user.nil? or place.user.screen_name.nil?
               = image_tag(twitter_icon_url(place.user), :size => '20x20')
+          %td= time_ago_in_words(place.created_at)
           %td
             - if can? :write, Place
               = link_to t('.edit', :default => t("helpers.links.edit")), edit_place_path(place), :class => 'btn btn-mini'

@@ -1,6 +1,8 @@
 if Rails.env.production?
+  puts 'production'
   DEFAULT_PROVIDER = 'twitter'
 else
+  puts 'not production'
   DEFAULT_PROVIDER = 'developer'
 end
 
