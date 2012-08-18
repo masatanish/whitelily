@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
-  attr_accessible :address, :description, :latitude, :longitude, :name, :gmaps
+  attr_accessible :address, :description, :latitude, :longitude, :name, :gmaps, :tabelog_url
+
   belongs_to :user
   belongs_to :last_editor, :class_name => 'User'
 

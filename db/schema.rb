@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813091843) do
+ActiveRecord::Schema.define(:version => 20120818035537) do
 
   create_table "places", :force => true do |t|
     t.string   "name",           :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120813091843) do
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
     t.integer  "last_editor_id"
+    t.string   "tabelog_url"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -44,9 +45,11 @@ ActiveRecord::Schema.define(:version => 20120813091843) do
     t.string   "uid"
     t.string   "screen_name"
     t.string   "name"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.string   "role",        :default => "member"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.string   "role",           :default => "member"
+    t.integer  "user_id"
+    t.integer  "last_editor_id"
   end
 
 end
