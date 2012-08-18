@@ -1,28 +1,11 @@
 .span6
-  = form_for @place, :html => { :class => 'form-horizontal' } do |f|
-    .control-group
-      = f.label '店名', :class => 'control-label'
-      .controls
-        = f.text_field :name, :class => 'text_field'
-    .control-group
-      = f.label '住所', :class => 'control-label'
-      .controls
-        = f.text_field :address, :class => 'text_field'
-    .control-group
-      = f.label '説明', :class => 'control-label'
-      .controls
-        = f.text_area :description, :class => 'text_area'
-    .control-group
-      = f.label :latitude, :class => 'control-label'
-      .controls
-        = f.text_field :latitude, :class => 'text_field', :disabled => true
-    .control-group
-      = f.label :longitude, :class => 'control-label'
-      .controls
-        = f.text_field :longitude, :class => 'text_field', :disabled => true
+  = simple_form_for(@place, :html => { :class => 'form-horizontal' }) do |f|
+    = f.input :name, :label => '店名'
+    = f.input :address, :label => '住所', :input_html => {:class => 'input-xlarge' }
+    = f.input :description, :label => '説明', :input_html => {:class => 'input-xlarge', :rows => 5}
+    = f.input :tabelog_url, :label => '食べログURL', :placeholder => 'http://tabelog.com/...', :input_html => {:class => 'input-xlarge' }
     .form-actions
       = f.submit nil, :class => 'btn btn-primary'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), places_path, :class => 'btn'
-
 .span5
   .small_map#map
