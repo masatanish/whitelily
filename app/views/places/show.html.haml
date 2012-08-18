@@ -16,7 +16,9 @@
         %td= @place.description
       %tr
         %th 食べログURL:
-        %td= link_to @place.tabelog_url, @place.tabelog_url, :target => '_blank'
+        %td
+          - unless @place.tabelog_url.blank?
+            = link_to @place.tabelog_url, @place.tabelog_url, :target => '_blank'
     -unless @place.user.nil?
       #posted-by{ :align => 'right' }
         %p
