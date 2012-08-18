@@ -70,6 +70,7 @@ class PlacesController < ApplicationController
   # PUT /places/1.json
   def update
     @place = Place.find(params[:id])
+    @place.last_editor = current_user
 
     respond_to do |format|
       if @place.update_attributes(params[:place])
