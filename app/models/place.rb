@@ -9,6 +9,7 @@ class Place < ActiveRecord::Base
   validates_presence_of :address
 
 
+  default_scope :order => "created_at DESC"
 
   acts_as_gmappable :check_process => false
   def gmaps4rails_address
