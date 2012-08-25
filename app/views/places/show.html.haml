@@ -13,7 +13,7 @@
         %td= @place.address
       %tr
         %th 説明:
-        %td= @place.description
+        %td= auto_link(simple_format(@place.description), :html =>{:target => '_blank'})
       %tr
         %th 食べログURL:
         %td
