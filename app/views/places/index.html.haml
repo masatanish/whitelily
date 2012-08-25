@@ -1,25 +1,33 @@
-- model_class = Place
 .page-header
   %h1 白百合なお店一覧
 
-.row-fluid
-  = gmaps(:map_options => {:auto_adjust => true}, :markers => {:data => @json, :options => {:rich_marker => true}})
+#index-tab
+  %ul.nav.nav-tabs
+    %li.active
+      %a{:href => '#tabmap', 'data-toggle' => 'tab'} Map
+    %li
+      %a{:href => '#tablist', 'data-toggle' => 'tab'} List
+  .tab-content
+    .tab-pane.fade.in.active#tabmap
+      .hoge
+        = gmaps(:map_options => {:auto_adjust => true}, :markers => {:data => @json, :options => {:rich_marker => true}})
+    .tab-pane.fade#tablist
+      %table.table.table-striped
+        %thead
+          %tr
+            %th 店名
+            %th 住所
+            %th 
+        %tbody
+          - @places.each do |place|
+            %tr
+              %td= link_to place.name, place_path(place)
+              %td= place.address
+              %td
+                - unless place.user.nil? or place.user.screen_name.nil?
+                  = image_tag(twitter_icon_url(place.user), :size => '20x20')
 
-.row-fluid
-  %table.table.table-striped
-    %thead
-      %tr
-        %th 店名
-        %th 住所
-        %th 
-    %tbody
-      - @places.each do |place|
-        %tr
-          %td= link_to place.name, place_path(place)
-          %td= place.address
-          %td
-            - unless place.user.nil? or place.user.screen_name.nil?
-              = image_tag(twitter_icon_url(place.user), :size => '20x20')
-
+.row-fluid.new-button
   - if can? :create, Place
-    = link_to t('.new', :default => t("helpers.links.new")), new_place_path, :class => 'btn btn-primary'
+    = link_to '新規登録', new_place_path, :class => 'btn btn-primary'
+
